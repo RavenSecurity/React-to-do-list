@@ -23,4 +23,4 @@ This time the task is simple: you will build a small Todo application that lives
 ## Deployment
 
 The application is deployed on Netlify. You can check it out here :
-https://animated-hummingbird-2a76d6.netlify.app/
+https://62bb05b1dd876210c83739fe--animated-hummingbird-2a76d6.netlify.app/
