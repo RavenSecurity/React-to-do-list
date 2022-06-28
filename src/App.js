@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import TodoList from './TodoList';
+import Input from './Input';
+import Submit from './Submit';
+import ClearTasks from './ClearTasks';
 
 function App() {
-  const [todos, setTodos] = useState(['Todo 1', 'Todo 2'])
   return (
     <>
-    <h1 className="text-3xl font-bold underline flex justify-center">To-do List</h1>
-    <input type="text" />
-    <button>Add Tasks</button>
-    <button>Clear Completed</button>
+    <div className='text-center m-8'>
+    <h1 className="text-3xl font-bold m-2">To-Do List</h1>
+    <Input />
+    <Submit />
+    <ClearTasks />
     <TodoList />
+    </div>  
     </>
   );
 }
