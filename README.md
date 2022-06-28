@@ -19,3 +19,8 @@ At the end of this 5-day challenge you will:
 ## Your mission
 
 This time the task is simple: you will build a small Todo application that lives in your browser, and saves todos even after restarting the browser.
+
+## Deployment
+
+The application is deployed on Netlify. You can check it out here :
+https://animated-hummingbird-2a76d6.netlify.app/
