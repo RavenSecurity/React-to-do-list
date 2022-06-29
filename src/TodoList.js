@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function TodoList( todos ) {
+export default function TodoList() {
+  const initialTodos  = ["My first todo", "My second todo"];
+  const [todos, setTodos] = useState(initialTodos);
   return (
-    <div className='tasks bg-slate-200 w-6/12 flex justify-center'>
-      <ul className='flex flex-col'>
-        <li><input type="checkbox" className="mr-2"/>Eat donut</li>
-        <li><input type="checkbox" className="mr-2"/>Drink milk</li>
-      </ul>
+    <div className='tasks bg-slate-200 w-6/12'>
+    <ul className=''>
+      {todos.map((todo) => (
+        <li>
+          <input type="checkbox" className="m-2"/> {todo}
+        </li>
+      ))}
+    </ul>
     </div>
   )
 }
