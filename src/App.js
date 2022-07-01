@@ -47,7 +47,7 @@ function App() {
     <div className='m-8 flex flex-col items-center'>
     <h1 className="text-3xl font-bold m-2">To-Do List</h1>
     <div className='flex m-8 items-center'>
-    <input type="text" ref={todoNameRef} className='border-solid border-2 border-slate-200 m-8'/>
+    <input type="text" ref={todoNameRef} placeholder="Write a new task" className='border-solid border-2 border-slate-200 m-8 pl-1'/>
     <button onClick={handleAddTodo} className="mr-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10">Add Tasks</button>
     <button onClick={handleClearTodos} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded h-10">Clear Completed</button>
     </div>
