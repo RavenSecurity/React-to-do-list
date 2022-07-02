@@ -1,25 +1,14 @@
 // Each button has props (colors, callbacks (fonction associé à l'événement), content (text) )
 
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import App from './App'
 
-export default function Buttons( todoNameRef, setTodos, todos) {
-  
+export default function Buttons( props, {handleClearTodos, handleAddTodo} ) {
+  // todoNameRef, setTodos, todos
+  console.log(props)
+  const todoNameRef = props.todoNameRef
 
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value
-    if (name === '') return
-    console.log(name)
-    setTodos(prevTodos => {
-      return [...prevTodos, { id: uuidv4(), name: name, complete: false}]
-    })
-    todoNameRef.current.value = null
-  }
-
-  function handleClearTodos() {
-    const newTodos = todos.filter(todo => !todo.complete)
-    setTodos(newTodos)
-  }
+ 
   
   return (
     <div>
