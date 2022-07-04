@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList';
 import Button from './Button';
+import Sort from './Sort'
 import { v4 as uuidv4 } from 'uuid'
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -41,10 +42,13 @@ function App() {
     setTodos(newTodos)
   }
   
-  function orderByName(e) {
+  function orderByName() {
     const orderedTodos = todos.sort((a, b) => a.name.localeCompare(b.name));
     console.log(orderedTodos);
     setTodos(orderedTodos);
+
+    // Idk why it doesn't update the DOM with the sorted array unless I add the clear function
+    handleClearTodos() 
   }
   
   return (
@@ -55,9 +59,10 @@ function App() {
     <input type="text" ref={todoNameRef} placeholder="Write a new task" className='border-solid border-2 border-slate-200 m-8 pl-1'/>
     <Button bgcolor={'bg-blue-500'} bghover={'hover:bg-blue-700'} text={'Add Tasks'} onClick={handleAddTodo} />
     <Button bgcolor={'bg-green-500'} bghover={'hover:bg-green-700'} text={'Clear Completed'} onClick={handleClearTodos} />
-    <button onClick={orderByName}> sort </button>
+    {/* <button onClick={orderByName}> sort </button> */}
     </div>
-    <div className='tasks bg-slate-200 w-6/12'>
+    <div className='tasks bg-slate-200 w-6/12 relative p-2'>
+      <Sort nameAZ={orderByName}/>
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
     </div>
     </div>  
