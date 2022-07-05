@@ -42,11 +42,18 @@ function App() {
     setTodos(newTodos)
   }
   
-  function orderByName() {
+  function orderByNameAZ() {
     const orderedTodos = todos.sort((a, b) => a.name.localeCompare(b.name));
     console.log(orderedTodos);
     setTodos(orderedTodos);
+    // Idk why it doesn't update the DOM with the sorted array unless I add the clear function
+    handleClearTodos() 
+  }
 
+  function orderByNameZA() {
+    const orderedTodos = todos.sort((a, b) => b.name.localeCompare(a.name));
+    console.log(orderedTodos);
+    setTodos(orderedTodos);
     // Idk why it doesn't update the DOM with the sorted array unless I add the clear function
     handleClearTodos() 
   }
@@ -62,7 +69,7 @@ function App() {
     {/* <button onClick={orderByName}> sort </button> */}
     </div>
     <div className='tasks bg-slate-200 w-6/12 relative p-2'>
-      <Sort nameAZ={orderByName}/>
+      <Sort nameAZ={orderByNameAZ} nameZA={orderByNameZA}/>
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
     </div>
     </div>  
